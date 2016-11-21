@@ -81,7 +81,7 @@ namespace Trencadis.Core.Conversions.Tests
 
 		#endregion
 
-		#region null, DBNull.Value => int
+		#region null, DBNull.Value => TNumeric
 
 		[Test]
 		public void When_converting_null_to_numeric()
