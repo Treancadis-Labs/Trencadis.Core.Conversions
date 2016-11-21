@@ -1,0 +1,44 @@
+﻿API architecture:
+==========================================================
+
+
+Performance:
+==========================================================
+ConversionsHelper.GetDefaultValue :: improve performance by
+	- handling defaults for known value types
+	- return null for reference types
+
+
+String to ...
+==========================================================
+...
+
+Inter-numeric conversions:
+==========================================================
+
+Decimal => Int with overflow:
+Double => Int
+Double => Decimal
+https://msdn.microsoft.com/en-us/library/364x0z75.aspx
+	There is no implicit conversion between floating-point types and the decimal type; therefore, a cast must be used to convert between these two types
+	You can also mix decimal and numeric integral types in the same expression. However, mixing decimal and floating-point types without a cast causes a compilation error
+
+etc...
+read also: https://msdn.microsoft.com/en-us/library/yht2cx7b.aspx
+
+
+Other Numeric conversions:
+==========================================================
+Int => Bool
+
+
+
+Generic conversions:
+==========================================================
+Enums => Int
+Class => Base class
+Base class => Concrete class
+Class => Interface
+Interface => Implementing class
+Usage of implicit conversions
+Usage of type converters (https://msdn.microsoft.com/en-us/library/ayybcxe5.aspx)

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{618E129A-9303-44C5-941D-705AB3A0C81D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trencadis.Core.Conversions</RootNamespace>
+    <AssemblyName>Trencadis.Core.Conversions</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter.cs" />
+    <Compile Include="Helpers\ConversionsHelper.cs" />
+    <Compile Include="ConversionExtensions-object.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\DefaultSpecializedConversionsBootstrapper.cs" />
+    <Compile Include="Infrastructure\ConversionObserver\IConversionObserver.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\ISpecializedConversionsBootstrapper.cs" />
+    <Compile Include="Infrastructure\Bootstrapping\SpecializedConversionsBootstrapper.cs" />
+    <Compile Include="Infrastructure\ConversionObserver\LambdaConversionObserver.cs" />
+    <Compile Include="Infrastructure\SpecializedConverterLocator.cs" />
+    <Compile Include="SpecializedConversions\GenericConverter.cs" />
+    <Compile Include="SpecializedConversions\InterNumericConverters\InterNumericConverters.base.cs" />
+    <Compile Include="SpecializedConversions\InterNumericConverters\InterNumericConverters.decimal-to-int.cs" />
+    <Compile Include="SpecializedConversions\InterNumericConverters\InterNumericConverters.double-to-int.cs" />
+    <Compile Include="SpecializedConversions\InterNumericConverters\InterNumericConverters.float-to-int.cs" />
+    <Compile Include="SpecializedConversions\ISpecializedConverter.cs" />
+    <Compile Include="SpecializedConversions\SpecializedConverter.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToBoolConverter.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToCharConverter.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToDateTimeConverter.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToGuidConverter.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-byte.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-decimal.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-double.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-float.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-int.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.base.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-long.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-sbyte.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-short.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-uint.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-ulong.cs" />
+    <Compile Include="SpecializedConversions\StringConverters\StringToNumberConverter.to-ushort.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exceptions\TypeConversionException.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
